@@ -18,8 +18,6 @@ export async function middleware(request: NextRequest) {
       secret: process.env.NEXTAUTH_SECRET, // Changed from NEXT_AUTH_SECRET
     });
 
-    console.log('token', token)
-
     // Redirect to login if accessing protected route without token
     if (!token && !isPublicPath) {
       return NextResponse.redirect(new URL("/u/login", request.url));

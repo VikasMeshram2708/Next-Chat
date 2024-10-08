@@ -18,6 +18,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import Link from "next/link";
 
 export default function ChatBox() {
   const { toast } = useToast();
@@ -75,7 +76,9 @@ export default function ChatBox() {
                 <DropdownMenuContent>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleCommingSoon}>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href="/u/profile">Profile</Link>
+                  </DropdownMenuItem>
                   <DropdownMenuItem onClick={handleCommingSoon}>Subscription</DropdownMenuItem>
                   <DropdownMenuItem>
                     <span
